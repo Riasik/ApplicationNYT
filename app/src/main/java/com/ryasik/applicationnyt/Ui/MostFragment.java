@@ -62,6 +62,8 @@ public class MostFragment extends Fragment{
         adapter = new RecyclerArticlesAdapter(getContext(),listArticle );
         recyclerView.setAdapter(adapter);
         Log.d(TAG, " on Create Fragment");
+
+        if (title == "Most Emailed")loadDataSources("emailed");
         return view;
 
 
@@ -73,7 +75,7 @@ public class MostFragment extends Fragment{
         dialog.setMessage("Loading...");
         dialog.show();
 
-        Call<ApiResponse> api = apiService.getData("emailed", ApiClient.API_KEY);
+        Call<ApiResponse> api = apiService.getData(most, ApiClient.API_KEY);
         api.enqueue(new Callback<ApiResponse>() {
             @Override
             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
