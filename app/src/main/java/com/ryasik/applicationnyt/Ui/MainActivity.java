@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(emailed, "Most Emailed");
-        adapter.addFrag(shared, "Most Emailed");
-        adapter.addFrag(viewed, "Most Emailed");
+        adapter.addFrag(shared, "Most Shared");
+        adapter.addFrag(viewed, "Most Viewed");
         viewPager.setAdapter(adapter);
     }
     public boolean onCreateOptionsMenu(Menu menu) {
